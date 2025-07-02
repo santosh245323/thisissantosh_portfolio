@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Santosh | Cyber Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+  
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    :root {
+      --dark-bg: #0a0a0a;
+      --darker-bg: #050505;
+      --accent: #2ecc71;
+      --accent-glow: rgba(46, 204, 113, 0.4);
+      --text: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+
+    /* Base Styles */
+    body {
+      margin: 0;
+      padding: 10px;
+    border-radius: 10px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--text);
+      line-height: 1.6;
+    
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1rem 4%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 10, 0.95);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      font-weight: 600;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .floating-social {
+      position: fixed;
+      top: 30%;
+      left: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .floating-social a {
+      pointer-events: auto;
+      color: green;
+      font-size: 1.5rem;
+      background: #333;
+      padding: 10px;
+      border-radius: 50%;
+      transition: transform 0.2s, background 0.2s;
+      text-decoration: none;
+    }
+
+    .floating-social a:hover {
+      color: whitesmoke;
+      background: green;
+      transform: scale(1.1);
+    }
+
+   
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 8rem 5% 4rem;
+      background: radial-gradient(circle at 75% 30%, var(--accent-glow) 0%, transparent 30%);
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .floating-tech-icons {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .floating-tech-icons i,
+    .floating-tech-icons .tailwind-icon {
+      position: absolute;
+      font-size: 30px;
+      color: var(--color);
+      opacity: 0.6;
+      animation: floatIcon 4s ease-in-out infinite;
+    }
+
+    .tech-watermark {
+      position: absolute;
+      top: 50%;
+      left: 80%;
+      font-size: 14px;
+      color: #ccc;
+      font-style: italic;
+      z-index: 1;
+      opacity: 0.5;
+    }
+
+    @keyframes floatIcon {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 2px;
+    }
+
+    .hero span {
+      font-size: 1.8rem;
+      background: linear-gradient(45deg, var(--accent), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      margin: 1rem 0;
+      font-size: 1.1rem;
+      opacity: 0.85;
+    }
+
+    .cta-button {
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      background: linear-gradient(45deg, var(--accent), --dark-bg);
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 1px solid white;
+    
+    }
+
+    .cta-button2 {
+      margin-top: 1.5rem;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(45deg, var(--accent), green);
+      color: rgb(255, 255, 255);
+      border-radius: 50px;
+      text-decoration: none;
+     
+    }
+
+    .cta-button:hover,
+    .cta-button2:hover {
+      color: rgb(6, 92, 32);
+      background: white;
+      border: 1px solid white;
+    }
+
+    .profile-img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      margin-top: 5px;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 30px var(--accent-glow);
+    }
+
+    footer {
+      background: var(--darker-bg);
+      padding: 2rem 5%;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    .social-links {
+      margin-top: 0rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .social-links a {
+      color: var(--text);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="/index.html" class="logo">SK MEHARA</a>
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/Education.html">Edu/certifications</a></li>
+      <li><a href="/Aboutme.html">About Me</a></li>
+      <li><a href="/contactme.html">Contact Me</a></li>
+      <li><a href="/Projects.html">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- Floating Social Icons -->
+  <div class="floating-social">
+    <a href="https://www.facebook.com/thisIsSantoshMehara" target="_blank" class="fa-brands fa-facebook-f"></a>
+    <a href="https://www.linkedin.com/in/thisissantoshmehara/" target="_blank" class="fa-brands fa-linkedin-in"></a>
+    <a href="https://wa.me/9779824740186?text=Hello%2C%20I%20am%20interested%20in%20your%20services." target="_blank" class="fa-brands fa-whatsapp whatsapp-w"></a>
+    
+
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="floating-tech-icons">
+      <div class="tech-watermark">In Experiences With</div>
+      <!-- Floating Icons -->
+      <i class="fab fa-laravel" style="--color: #FF2D20; top: 15%; left: 70%;"></i>
+      <i class="fab fa-python" style="--color: #3776AB; top: 25%; left: 80%;"></i>
+      <i class="fab fa-js" style="--color: #F7DF1E; top: 60%; left: 85%;"></i>
+      <i class="fab fa-node-js" style="--color: #339933; top: 70%; left: 75%;"></i>
+      <i class="fas fa-database" style="--color: #4479A1; top: 30%; left: 85%;"></i>
+      <i class="fab fa-bootstrap" style="--color: #7952B3; top: 75%; left: 65%;"></i>
+      <i class="fab fa-aws" style="--color: #FF9900; top: 20%; left: 65%;"></i>
+      <i class="fas fa-code" style="--color: #007ACC; top: 80%; left: 80%;"></i>
+      <i class="fas fa-terminal" style="--color: #3776AB; top: 65%; left: 68%;"></i>
+      <i class="fab fa-linux" style="--color: #FCC624; top: 10%; left: 75%;"></i>
+      <i class="fas fa-mobile-alt" style="--color: #02569B; top: 40%; left: 82%;"></i>
+      <i class="fab fa-react" style="--color: #61DAFB; top: 50%; left: 68%;"></i>
+      <i class="fab fa-css3-alt" style="--color: #2965F1; top: 65%; left: 90%;"></i>
+      <i class="fab fa-html5" style="--color: #E34F26; top: 35%; left: 72%;"></i>
+      <i class="fab fa-github" style="--color: #cfc8c7; top: 85%; left: 70%;"></i>
+      <i class="fab fa-docker" style="--color: #2496ED; top: 55%; left: 90%;"></i>
+      <i class="fab fa-npm" style="--color: #CB3837; top: 25%; left: 90%;"></i>
+      <i class="fab fa-ubuntu" style="--color: #E95420; top: 80%; left: 90%;"></i>
+      <div class="tailwind-icon" style="--color: #06B6D4; top: 50%; left: 78%;">🌊</div>
+      <i class="fab fa-php" style="--color: #8892BE; top: 40%; left: 88%;"></i>
+      <i class="fab fa-java" style="--color: #5382a1; top: 15%; left: 85%;"></i>
+    </div>
+
+    <img src="SoftwareEngineer.jpeg" alt="Santosh Kumar Mahara profile picture" class="profile-img"  />
+    <h1 data-aos="fade-up">Hello, I'm <span id="typed"></span></h1>
+    <p class="highlight" >Computer Sub-Engineer | Java Developer | IT Support & Networking Specialist</p>
+    <p >Blending engineering precision with software innovation to support and build smart digital systems.</p>
+    <p style="margin-top: 40px;" data-aos="fade-up" >
+      <a href="/contactme.html" class="cta-button">Let's Connect</a>
+      <a href="/Aboutme.html" class="cta-button2">About Me</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Designed by Santosh Mehara.</p>
+    <div class="social-links">
+      <a href="https://github.com/santosh245323"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    // Typed.js
+    const typed = new Typed('#typed', {
+      strings: ["Santosh Mehara", "a Computer Sub-Engineer", "a Software Developer", "a Java Developer", "a Tech Enthusiast"],
+      typeSpeed: 200,
+      backSpeed: 80,
+      loop: true
+    });
+
+    // AOS
+    AOS.init({ duration: 1000 });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+   
+  </script>
+
+  <script>
+  // 1. URL/पाथ से सिर्फ filename निकालो
+  const current = window.location.pathname.split("/").pop().toLowerCase();
+
+  // 2. हर nav लिंक पर लूप
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    // लिंक के href से भी filename निकालो
+    const href = link.getAttribute("href").split("/").pop().toLowerCase();
+    // 3. मिलते ही active क्लास लगा दो
+    if (href === current) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+</script>
+</body>
+</html>
