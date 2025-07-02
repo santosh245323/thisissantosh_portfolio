@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  
+
+  <!-- Disable tap highlight on IE -->
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  
+
+ <title>Contact | Santosh</title>
+
+  <style>
+    :root {
+      --dark-bg: #0a0a0a;
+      --darker-bg: #050505;
+      --accent: #2ecc71;
+      --accent-glow: rgba(46, 204, 113, 0.4);
+      --text: #ffffff;
+      --border-radius: 10px;
+      --box-shadow: 0 0 2px 1px #0c0c0c;
+    }
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+
+    /* Base Styles */
+    body {
+      margin: 0;
+      padding: 10px;
+    border-radius: 10px;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--text);
+      line-height: 1.6;
+    
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--text);
+    }
+
+
+    /* Contact Section Styles */
+    .contact-container {
+      margin-top: 80px;
+    }
+
+    .contact-hero {
+      background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), url('1.JPG') no-repeat center center/cover;
+      height: 25vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-hero-content h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .contact-hero-content p {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+
+    .contact-content {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .contact-form-card,
+    .contact-info-card {
+      background-color: var(--darker-bg);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+      box-shadow: var(--box-shadow);
+      border: 1px solid #1a1a1a;
+    }
+
+    .contact-form-card h2,
+    .contact-info-card h2 {
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .form-intro {
+      margin-bottom: 2rem;
+      color: #aaa;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 1rem 1rem 1rem 3rem;
+      background-color: #111;
+      border: 1px solid #1a1a1a;
+      border-radius: var(--border-radius);
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px var(--accent-glow);
+    }
+
+    textarea.form-input {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    label {
+      position: absolute;
+      left: 3rem;
+      top: 1rem;
+      color: #777;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .form-input:focus+label,
+    .form-input:not(:placeholder-shown)+label {
+      transform: translateY(-1.2rem) translateX(-1rem) scale(0.9);
+      background-color: var(--darker-bg);
+      padding: 0 0.5rem;
+      color: var(--accent);
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      color: #777;
+    }
+
+    .textarea-icon {
+      top: 1.2rem;
+    }
+
+    .btn-submit {
+      background-color: var(--accent);
+      color: #000;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .btn-submit:hover {
+      background-color: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .contact-details {
+      margin: 2rem 0;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(46, 204, 113, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+    }
+
+    .contact-text h4 {
+      margin-bottom: 0.2rem;
+      color: var(--text);
+    }
+
+    .contact-text a,
+    .contact-text span {
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-text a:hover {
+      color: var(--accent);
+    }
+
+    footer {
+      background: var(--darker-bg);
+      padding: 2rem 5%;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    .social-links {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .social-links a {
+      color: var(--text);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    
+
+   
+   
+
+      /* Navbar from main portfolio */
+      .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1rem 4%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 10, 0.95);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      font-weight: 600;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+   
+  </style>
+</head>
+
+<body>
+ 
+<nav class="navbar">
+    <a href="index.html" class="logo">SK MEHARA</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Education.html">Edu/certifications</a></li>
+      <li><a href="Aboutme.html">About Me</a></li>
+      <li><a href="contactme.html">Contact Me</a></li>
+    <li><a href="Projects.html">Projects</a></li>
+    </ul>
+  </nav>
+    
+  <div class="contact-container">
+    <div class="contact-hero">
+      <div class="contact-hero-content">
+        <h3> 📞 Contact Me</h3>
+        <p>Let's start a conversation - I'd love to hear from you!</p>
+      </div>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+          <h2><i class="fas fa-paper-plane"></i> Send Me a Message</h2>
+          <p class="form-intro">Feel free to use the form below or directly email me at
+            <strong>ThisisSantoshmehara@gmail.com</strong> to get in touch. I make an effort to respond to all messages
+            within 24-48 hours.</p>
+
+          <form   class="contact-form">
+            <div class="form-group">
+              <input type="email" class="form-input" name="email" id="email" placeholder=" " required disabled>
+              <label for="email">Email Address</label>
+              <i class="fas fa-envelope input-icon"></i>
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-input" name="subject" id="subject" placeholder=" " required disabled>
+              <label for="subject">Subject</label>
+              <i class="fas fa-tag input-icon"></i>
+            </div>
+
+            <div class="form-group" >
+              <textarea class="form-input" rows="5" name="message" id="message" placeholder=" " required disabled></textarea>
+              <label for="message">Your Message</label>
+              <i class="fas fa-comment input-icon textarea-icon"></i>
+            </div>
+
+            <button type="submit" class="btn-submit" disabled>
+              <i class="fas fa-paper-plane"></i> Comming Soon!
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info-card">
+          <h2><i class="fas fa-address-card"></i> Contact Information</h2>
+          <p>If you prefer, you can also connect with me on social media for updates and insights into my work.</p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Phone</h4>
+                <a href="tel:9824740186">+977 9824740186</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email</h4>
+                <a href="mailto:ThisisSantoshmehara@gmail.com" aria-label="Send email to Santosh">
+  ThisisSantoshmehara@gmail.com
+</a>
+
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Location</h4>
+                <span>Naraha Siraha District 56500, Nepal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-footer">
+      <p>Thank you for taking the time to reach out. I look forward to connecting with you!</p>
+    </div>
+  </div>
+
+
+   <footer>
+    <p>© 2025 Designed by Santosh Mehara.</p>
+    <div class="social-links">
+      <a href="https://github.com/santosh245323"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
+  </footer>
+
+<script>
+  // 1. URL/पाथ से सिर्फ filename निकालो
+  const current = window.location.pathname.split("/").pop().toLowerCase();
+
+  // 2. हर nav लिंक पर लूप
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    // लिंक के href से भी filename निकालो
+    const href = link.getAttribute("href").split("/").pop().toLowerCase();
+    // 3. मिलते ही active क्लास लगा दो
+    if (href === current) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+</script>
+</body>
+</html>
